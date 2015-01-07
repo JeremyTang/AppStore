@@ -1,0 +1,26 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/AppActionBarStyle</item>
+        <!-- 修改actionbar 左上角图标左侧的返回符号 -->
+        <item name="android:homeAsUpIndicator">@drawable/img_folder</item>
+    </style>
+
+    <style name="AppActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
+        <!-- actionbar 背景 -->
+        <item name="android:background">@drawable/bg_actionbar</item>
+        <!-- 设置actionbar 左上角图标 -->
+        <item name="android:icon">@drawable/img_home</item>
+    </style>
+
+    <style name="NavRadioStyle">
+        <item name="android:button">@null</item>
+        <item name="android:textSize">@dimen/font_normal</item>
+        <item name="android:background">@drawable/selector_nav_radio</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:padding">@dimen/padding_five</item>
+        <item name="android:drawableLeft">@drawable/img_home</item>
+        
+    </style>
+
+</resources>
