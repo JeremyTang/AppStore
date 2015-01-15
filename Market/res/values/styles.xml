@@ -1,0 +1,40 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/AppActionBarStyle</item>
+        <!--
+        修改actionbar 左上角图标左侧的返回符号 可在设置drawertoggle时重新设置
+        <item name="android:homeAsUpIndicator">@drawable/img_folder</item>
+        -->
+        <!-- 下拉菜单图标 -->
+        <item name="android:actionOverflowButtonStyle">@style/OverFlow</item>
+    </style>
+
+    <style name="AppActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
+
+        <!-- actionbar 背景 -->
+        <item name="android:background">@drawable/bg_actionbar</item>
+        <!-- 设置actionbar 左上角图标 -->
+        <item name="android:icon">@drawable/img_home</item>
+    </style>
+    <!-- actionbar 下来菜单图标样式 -->
+    <style name="OverFlow" parent="@android:style/Widget.Holo.ActionButton.Overflow">
+        <item name="android:src">@drawable/img_actionbar_overflow</item>
+    </style>
+
+    <style name="NavRadioStyle">
+        <item name="android:button">@null</item>
+        <item name="android:textSize">@dimen/font_normal</item>
+        <item name="android:background">@drawable/selector_nav</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:padding">@dimen/padding_fifteen</item>
+    </style>
+
+    <style name="ProgressBar">
+        <item name="android:indeterminate">false</item>
+        <item name="android:minWidth">36dp</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="android:indeterminateDrawable">@anim/progressbar_anim</item>
+    </style>
+
+</resources>
