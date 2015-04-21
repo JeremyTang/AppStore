@@ -16,11 +16,11 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TextView;
 
-import com.jingliang.appstore.AppInfoActivity;
+import com.jingliang.appstore.ApKInfoActivity;
 import com.jingliang.appstore.R;
 import com.jingliang.appstore.adapter.AppJsonAdapter;
-import com.jingliang.appstore.net.NetController;
-import com.jingliang.appstore.net.NetManager;
+import com.jingliang.appstore.http.HttpManager;
+import com.jingliang.appstore.http.HttpSource;
 import com.jingliang.appstore.utils.IntentData;
 import com.jingliang.appstore.xlistview.XListView;
 import com.jingliang.appstore.xlistview.XListView.IXListViewListener;
@@ -32,7 +32,7 @@ import com.loopj.android.http.JsonHttpResponseHandler;
  * @author tjl 　应用界面
  */
 public class Market extends Fragment implements IXListViewListener,
-		OnItemClickListener {
+		OnItemClickListener, Runnable {
 
 	private static final String tag = Market.class.getSimpleName();
 
@@ -66,6 +66,7 @@ public class Market extends Fragment implements IXListViewListener,
 			errorText.setVisibility(View.VISIBLE);
 			xListView.setEmptyView(errorText);
 		};
+
 	};
 
 	private Handler mHandler = new Handler() {
@@ -103,7 +104,6 @@ public class Market extends Fragment implements IXListViewListener,
 
 	@Override
 	public void onPause() {
-		// TODO Auto-generated method stub
 		Log.d(tag, "onPause()");
 		super.onPause();
 	}
@@ -114,7 +114,7 @@ public class Market extends Fragment implements IXListViewListener,
 			mAdapter = new AppJsonAdapter(getActivity(), mJsonArray);
 			xListView.setAdapter(mAdapter);
 		} else {
-			NetController.get(NetManager.URL_LIST, mResponsehandler);
+			HttpManager.get(HttpSource.URL_LIST, mResponsehandler);
 		}
 		super.onResume();
 	}
@@ -158,7 +158,7 @@ public class Market extends Fragment implements IXListViewListener,
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
-		Intent intent = new Intent(getActivity(), AppInfoActivity.class);
+		Intent intent = new Intent(getActivity(), ApKInfoActivity.class);
 		try {
 			intent.putExtra(
 					IntentData.APKID,
@@ -173,5 +173,11 @@ public class Market extends Fragment implements IXListViewListener,
 			e.printStackTrace();
 		}
 		startActivity(intent);
+	}
+
+	@Override
+	public void run() {
+		// ConnectionManager.newInstance(getActivity()).sendGetRequest(
+		// HttpManager.URL_LIST);
 	}
 }

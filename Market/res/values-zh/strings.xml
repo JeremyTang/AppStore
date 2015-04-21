@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">安卓市场</string>
+    <string name="drawerlayout_open">打开</string>
+    <string name="drawerlayout_close">关闭</string>
+
+    <!-- Nav -->
+    <string name="nav_apps">市场</string>
+    <string name="nav_install">安装</string>
+    <string name="nav_download">下载</string>
+    <string name="nav_update">更新</string>
+    
+    <!--apps  -->
+	<string name="net_error">又特么的错了!</string>
+	
+    <!-- xlistview -->
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">释放刷新</string>
+    <string name="xlistview_header_hint_loading">正在加载…</string>
+    <string name="xlistview_header_last_time">最后更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+
+    <!-- 应用列表 -->
+    <string name="app_down">下载</string>
+	
+    <!-- 网络提示 -->
+    <string name="network_failure">网络请求失败！</string>
+
+</resources>

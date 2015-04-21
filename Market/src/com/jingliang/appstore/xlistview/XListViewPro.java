@@ -100,6 +100,7 @@ public class XListViewPro extends ListView implements OnScrollListener {
 		// init header height
 		mHeaderView.getViewTreeObserver().addOnGlobalLayoutListener(
 				new OnGlobalLayoutListener() {
+					@SuppressWarnings("deprecation")
 					@Override
 					public void onGlobalLayout() {
 						mHeaderViewHeight = mHeaderViewContent.getHeight();
@@ -184,6 +185,7 @@ public class XListViewPro extends ListView implements OnScrollListener {
 	 * 
 	 * @param time
 	 */
+	@SuppressWarnings("deprecation")
 	public void setRefreshTime() {
 		mHeaderTimeView.setText(new Date().toLocaleString());
 	}

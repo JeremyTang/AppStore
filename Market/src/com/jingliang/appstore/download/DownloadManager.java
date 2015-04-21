@@ -1,9 +1,15 @@
 package com.jingliang.appstore.download;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.Context;
 import android.database.Cursor;
+import android.util.Log;
 
-import com.jingliang.appstore.entity.DownloadInfo;
+import com.jingliang.appstore.bean.DownloadInfo;
+import com.jingliang.appstore.db.DownloadDAO;
 import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.db.converter.ColumnConverter;
@@ -17,12 +23,10 @@ import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.util.LogUtils;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * Author: wyouflf Date: 13-11-10 Time: 下午8:10
+ * 
+ * @author tjl
+ *
  */
 public class DownloadManager {
 
@@ -31,15 +35,20 @@ public class DownloadManager {
 	private int maxDownloadThread = 3;
 
 	private Context mContext;
-	private DbUtils db;
+	private DbUtils mDbUtils;
+
+	private DownloadDAO mDao;
 
 	protected DownloadManager(Context appContext) {
 		ColumnConverterFactory.registerColumnConverter(HttpHandler.State.class,
 				new HttpHandlerStateConverter());
 		mContext = appContext;
-		db = DbUtils.create(mContext);
+		mDbUtils = DbUtils.create(mContext);
+		//jingliang
+		mDao = DownloadDAO.newInstance(mContext);
 		try {
-			downloadInfoList = db.findAll(Selector.from(DownloadInfo.class));
+			//jingliang
+			downloadInfoList = mDbUtils.findAll(Selector.from(DownloadInfo.class));
 		} catch (DbException e) {
 			LogUtils.e(e.getMessage(), e);
 		}
@@ -72,7 +81,8 @@ public class DownloadManager {
 		downloadInfo.setHandler(handler);
 		downloadInfo.setState(handler.getState());
 		downloadInfoList.add(downloadInfo);
-		db.saveBindingId(downloadInfo);
+		mDbUtils.saveBindingId(downloadInfo);
+		mDao.insert(downloadInfo);
 	}
 
 	public void resumeDownload(int index, final RequestCallBack<File> callback)
@@ -91,7 +101,8 @@ public class DownloadManager {
 				new ManagerCallBack(downloadInfo, callback));
 		downloadInfo.setHandler(handler);
 		downloadInfo.setState(handler.getState());
-		db.saveOrUpdate(downloadInfo);
+		mDbUtils.saveOrUpdate(downloadInfo);
+		//mDao.update(downloadInfo);
 	}
 
 	public void removeDownload(int index) throws DbException {
@@ -105,7 +116,7 @@ public class DownloadManager {
 			handler.cancel();
 		}
 		downloadInfoList.remove(downloadInfo);
-		db.delete(downloadInfo);
+		mDbUtils.delete(downloadInfo);
 	}
 
 	public void stopDownload(int index) throws DbException {
@@ -120,7 +131,8 @@ public class DownloadManager {
 		} else {
 			downloadInfo.setState(HttpHandler.State.CANCELLED);
 		}
-		db.saveOrUpdate(downloadInfo);
+		mDbUtils.saveOrUpdate(downloadInfo);
+		//mDao.update(downloadInfo);
 	}
 
 	public void stopAllDownload() throws DbException {
@@ -132,7 +144,8 @@ public class DownloadManager {
 				downloadInfo.setState(HttpHandler.State.CANCELLED);
 			}
 		}
-		db.saveOrUpdateAll(downloadInfoList);
+		mDbUtils.saveOrUpdateAll(downloadInfoList);
+		//mDao.update(download);
 	}
 
 	public void backupDownloadInfoList() throws DbException {
@@ -142,7 +155,7 @@ public class DownloadManager {
 				downloadInfo.setState(handler.getState());
 			}
 		}
-		db.saveOrUpdateAll(downloadInfoList);
+		mDbUtils.saveOrUpdateAll(downloadInfoList);
 	}
 
 	public int getMaxDownloadThread() {
@@ -192,7 +205,7 @@ public class DownloadManager {
 				downloadInfo.setState(handler.getState());
 			}
 			try {
-				db.saveOrUpdate(downloadInfo);
+				mDbUtils.saveOrUpdate(downloadInfo);
 			} catch (DbException e) {
 				LogUtils.e(e.getMessage(), e);
 			}
@@ -208,7 +221,7 @@ public class DownloadManager {
 				downloadInfo.setState(handler.getState());
 			}
 			try {
-				db.saveOrUpdate(downloadInfo);
+				mDbUtils.saveOrUpdate(downloadInfo);
 			} catch (DbException e) {
 				LogUtils.e(e.getMessage(), e);
 			}
@@ -226,7 +239,9 @@ public class DownloadManager {
 			downloadInfo.setFileLength(total);
 			downloadInfo.setProgress(current);
 			try {
-				db.saveOrUpdate(downloadInfo);
+				//jingliang
+				Log.d("jingliang","Database Util");
+				mDbUtils.saveOrUpdate(downloadInfo);
 			} catch (DbException e) {
 				LogUtils.e(e.getMessage(), e);
 			}
@@ -242,7 +257,7 @@ public class DownloadManager {
 				downloadInfo.setState(handler.getState());
 			}
 			try {
-				db.saveOrUpdate(downloadInfo);
+				mDbUtils.saveOrUpdate(downloadInfo);
 			} catch (DbException e) {
 				LogUtils.e(e.getMessage(), e);
 			}
@@ -258,7 +273,7 @@ public class DownloadManager {
 				downloadInfo.setState(handler.getState());
 			}
 			try {
-				db.saveOrUpdate(downloadInfo);
+				mDbUtils.saveOrUpdate(downloadInfo);
 			} catch (DbException e) {
 				LogUtils.e(e.getMessage(), e);
 			}

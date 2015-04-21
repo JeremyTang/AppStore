@@ -46,64 +46,66 @@ public final class R {
         public static final int guide_btn_add_account=0x7f020011;
         public static final int guide_btn_add_account_pressed=0x7f020012;
         public static final int ic_launcher=0x7f020013;
-        public static final int img_actionbar_overflow=0x7f020014;
-        public static final int img_actionbar_up=0x7f020015;
-        public static final int img_app_logo=0x7f020016;
-        public static final int img_folder=0x7f020017;
-        public static final int img_home=0x7f020018;
-        public static final int img_list_selector_disabled_holo_dark=0x7f020019;
-        public static final int img_list_selector_disabled_holo_light=0x7f02001a;
-        public static final int img_nav_ico_camera=0x7f02001b;
-        public static final int img_nav_ico_end=0x7f02001c;
-        public static final int img_nav_ico_flash=0x7f02001d;
-        public static final int img_nav_ico_four=0x7f02001e;
-        public static final int img_nav_ico_util=0x7f02001f;
-        public static final int img_nav_ico_vip=0x7f020020;
-        public static final int loading_01=0x7f020021;
-        public static final int loading_02=0x7f020022;
-        public static final int loading_03=0x7f020023;
-        public static final int loading_04=0x7f020024;
-        public static final int loading_05=0x7f020025;
-        public static final int loading_06=0x7f020026;
-        public static final int loading_07=0x7f020027;
-        public static final int loading_08=0x7f020028;
-        public static final int loading_09=0x7f020029;
-        public static final int loading_10=0x7f02002a;
-        public static final int loading_11=0x7f02002b;
-        public static final int loading_12=0x7f02002c;
-        public static final int loading_13=0x7f02002d;
-        public static final int loading_14=0x7f02002e;
-        public static final int loading_15=0x7f02002f;
-        public static final int loading_16=0x7f020030;
-        public static final int loading_17=0x7f020031;
-        public static final int loading_18=0x7f020032;
-        public static final int loading_19=0x7f020033;
-        public static final int loading_20=0x7f020034;
-        public static final int loading_21=0x7f020035;
-        public static final int loading_22=0x7f020036;
-        public static final int loading_23=0x7f020037;
-        public static final int loading_24=0x7f020038;
-        public static final int loading_25=0x7f020039;
-        public static final int loading_26=0x7f02003a;
-        public static final int loading_27=0x7f02003b;
-        public static final int loading_28=0x7f02003c;
-        public static final int loading_29=0x7f02003d;
-        public static final int loading_30=0x7f02003e;
-        public static final int loading_31=0x7f02003f;
-        public static final int loading_32=0x7f020040;
-        public static final int loading_33=0x7f020041;
-        public static final int loading_34=0x7f020042;
-        public static final int selector_button=0x7f020043;
-        public static final int selector_button_blue=0x7f020044;
-        public static final int selector_nav=0x7f020045;
-        public static final int selector_white_black=0x7f020046;
-        public static final int selector_xlistview=0x7f020047;
-        public static final int xlistview_arrow_down=0x7f020048;
-        public static final int xlistview_arrow_up=0x7f020049;
-        public static final int xlistview_body_bg_05=0x7f02004a;
-        public static final int xlistview_body_dotted_line=0x7f02004b;
-        public static final int xlistview_line=0x7f02004c;
-        public static final int xlistview_prompt_bg=0x7f02004d;
+        public static final int ic_transparent=0x7f020014;
+        public static final int img_actionbar_overflow=0x7f020015;
+        public static final int img_actionbar_up=0x7f020016;
+        public static final int img_app_logo=0x7f020017;
+        public static final int img_folder=0x7f020018;
+        public static final int img_home=0x7f020019;
+        public static final int img_list_selector_disabled_holo_dark=0x7f02001a;
+        public static final int img_list_selector_disabled_holo_light=0x7f02001b;
+        public static final int img_nav_ico_camera=0x7f02001c;
+        public static final int img_nav_ico_end=0x7f02001d;
+        public static final int img_nav_ico_flash=0x7f02001e;
+        public static final int img_nav_ico_four=0x7f02001f;
+        public static final int img_nav_ico_util=0x7f020020;
+        public static final int img_nav_ico_vip=0x7f020021;
+        public static final int loading_01=0x7f020022;
+        public static final int loading_02=0x7f020023;
+        public static final int loading_03=0x7f020024;
+        public static final int loading_04=0x7f020025;
+        public static final int loading_05=0x7f020026;
+        public static final int loading_06=0x7f020027;
+        public static final int loading_07=0x7f020028;
+        public static final int loading_08=0x7f020029;
+        public static final int loading_09=0x7f02002a;
+        public static final int loading_10=0x7f02002b;
+        public static final int loading_11=0x7f02002c;
+        public static final int loading_12=0x7f02002d;
+        public static final int loading_13=0x7f02002e;
+        public static final int loading_14=0x7f02002f;
+        public static final int loading_15=0x7f020030;
+        public static final int loading_16=0x7f020031;
+        public static final int loading_17=0x7f020032;
+        public static final int loading_18=0x7f020033;
+        public static final int loading_19=0x7f020034;
+        public static final int loading_20=0x7f020035;
+        public static final int loading_21=0x7f020036;
+        public static final int loading_22=0x7f020037;
+        public static final int loading_23=0x7f020038;
+        public static final int loading_24=0x7f020039;
+        public static final int loading_25=0x7f02003a;
+        public static final int loading_26=0x7f02003b;
+        public static final int loading_27=0x7f02003c;
+        public static final int loading_28=0x7f02003d;
+        public static final int loading_29=0x7f02003e;
+        public static final int loading_30=0x7f02003f;
+        public static final int loading_31=0x7f020040;
+        public static final int loading_32=0x7f020041;
+        public static final int loading_33=0x7f020042;
+        public static final int loading_34=0x7f020043;
+        public static final int selector_button=0x7f020044;
+        public static final int selector_button_blue=0x7f020045;
+        public static final int selector_expandable=0x7f020046;
+        public static final int selector_nav=0x7f020047;
+        public static final int selector_white_black=0x7f020048;
+        public static final int selector_xlistview=0x7f020049;
+        public static final int xlistview_arrow_down=0x7f02004a;
+        public static final int xlistview_arrow_up=0x7f02004b;
+        public static final int xlistview_body_bg_05=0x7f02004c;
+        public static final int xlistview_body_dotted_line=0x7f02004d;
+        public static final int xlistview_line=0x7f02004e;
+        public static final int xlistview_prompt_bg=0x7f02004f;
     }
     public static final class id {
         public static final int app_download=0x7f09000c;
@@ -116,38 +118,40 @@ public final class R {
         public static final int download_icon=0x7f09000e;
         public static final int download_listview=0x7f090004;
         public static final int download_loading=0x7f090005;
+        public static final int download_message=0x7f090011;
         public static final int download_name=0x7f090010;
-        public static final int download_progress=0x7f090011;
+        public static final int download_progress=0x7f090013;
+        public static final int download_speed=0x7f090012;
         public static final int drawer_layout=0x7f090009;
         public static final int drawer_listview=0x7f09000a;
-        public static final int drawer_radiogroup=0x7f090014;
+        public static final int drawer_radiogroup=0x7f090016;
         public static final int error_text=0x7f090003;
         public static final int loading_view=0x7f090002;
         public static final int main_contianer=0x7f090008;
         public static final int main_drawerlayout=0x7f090007;
-        public static final int menu_about=0x7f090028;
-        public static final int menu_quit=0x7f090029;
-        public static final int menu_settings=0x7f090027;
-        public static final int nav_apps=0x7f090015;
-        public static final int nav_download=0x7f090017;
-        public static final int nav_icon=0x7f090012;
-        public static final int nav_install=0x7f090016;
-        public static final int nav_title=0x7f090013;
-        public static final int nav_update=0x7f090018;
-        public static final int xlistview_footer_content=0x7f090019;
-        public static final int xlistview_footer_hint_textview=0x7f09001b;
-        public static final int xlistview_footer_progressbar=0x7f09001a;
-        public static final int xlistview_header_arrow=0x7f090020;
-        public static final int xlistview_header_content=0x7f09001c;
-        public static final int xlistview_header_hint_textview=0x7f09001e;
-        public static final int xlistview_header_pro_arrow=0x7f090023;
-        public static final int xlistview_header_pro_content=0x7f090022;
-        public static final int xlistview_header_pro_hint_textview=0x7f090025;
-        public static final int xlistview_header_pro_progressbar=0x7f090024;
-        public static final int xlistview_header_pro_time=0x7f090026;
-        public static final int xlistview_header_progressbar=0x7f090021;
-        public static final int xlistview_header_text=0x7f09001d;
-        public static final int xlistview_header_time=0x7f09001f;
+        public static final int menu_about=0x7f09002a;
+        public static final int menu_quit=0x7f09002b;
+        public static final int menu_settings=0x7f090029;
+        public static final int nav_apps=0x7f090017;
+        public static final int nav_download=0x7f090019;
+        public static final int nav_icon=0x7f090014;
+        public static final int nav_install=0x7f090018;
+        public static final int nav_title=0x7f090015;
+        public static final int nav_update=0x7f09001a;
+        public static final int xlistview_footer_content=0x7f09001b;
+        public static final int xlistview_footer_hint_textview=0x7f09001d;
+        public static final int xlistview_footer_progressbar=0x7f09001c;
+        public static final int xlistview_header_arrow=0x7f090022;
+        public static final int xlistview_header_content=0x7f09001e;
+        public static final int xlistview_header_hint_textview=0x7f090020;
+        public static final int xlistview_header_pro_arrow=0x7f090025;
+        public static final int xlistview_header_pro_content=0x7f090024;
+        public static final int xlistview_header_pro_hint_textview=0x7f090027;
+        public static final int xlistview_header_pro_progressbar=0x7f090026;
+        public static final int xlistview_header_pro_time=0x7f090028;
+        public static final int xlistview_header_progressbar=0x7f090023;
+        public static final int xlistview_header_text=0x7f09001f;
+        public static final int xlistview_header_time=0x7f090021;
     }
     public static final class layout {
         public static final int appinfo=0x7f030000;
@@ -171,44 +175,50 @@ public final class R {
     public static final class string {
         /**  应用列表 
  应用列表 
+ 应用列表 
          */
         public static final int app_down=0x7f06000e;
         public static final int app_name=0x7f060000;
-        public static final int complete=0x7f060017;
-        public static final int delete=0x7f060012;
+        public static final int complete=0x7f060016;
+        public static final int delete=0x7f060011;
         public static final int drawerlayout_close=0x7f060002;
         public static final int drawerlayout_open=0x7f060001;
+        public static final int failure=0x7f060017;
         /**  Nav 
+ Nav 
  Nav 
          */
         public static final int nav_apps=0x7f060003;
         public static final int nav_download=0x7f060005;
         public static final int nav_install=0x7f060004;
         public static final int nav_update=0x7f060006;
-        /** apps  
+        /**  apps 
  apps 
+apps  
          */
-        public static final int net_error=0x7f060007;
+        public static final int net_error=0x7f06000d;
         /**  网络提示 
          */
-        public static final int network_failure=0x7f06000f;
+        public static final int network_failure=0x7f060018;
         /**  Download 
+ Download 
          */
-        public static final int pause=0x7f060010;
-        public static final int resume=0x7f060011;
-        public static final int retry=0x7f060013;
-        public static final int start=0x7f060015;
-        public static final int stop=0x7f060014;
-        public static final int warting=0x7f060016;
-        public static final int xlistview_footer_hint_normal=0x7f06000c;
-        public static final int xlistview_footer_hint_ready=0x7f06000d;
-        public static final int xlistview_header_hint_loading=0x7f06000a;
+        public static final int pause=0x7f06000f;
+        public static final int resume=0x7f060010;
+        public static final int retry=0x7f060012;
+        public static final int start=0x7f060014;
+        public static final int stop=0x7f060013;
+        public static final int warting=0x7f060015;
+        public static final int xlistview_footer_hint_normal=0x7f06000b;
+        public static final int xlistview_footer_hint_ready=0x7f06000c;
+        public static final int xlistview_header_hint_loading=0x7f060009;
         /**  xlistview 
  xlistview 
+ xlistview 
          */
-        public static final int xlistview_header_hint_normal=0x7f060008;
-        public static final int xlistview_header_hint_ready=0x7f060009;
-        public static final int xlistview_header_last_time=0x7f06000b;
+        public static final int xlistview_header_hint_normal=0x7f060007;
+        public static final int xlistview_header_hint_ready=0x7f060008;
+        public static final int xlistview_header_last_time=0x7f06000a;
     }
     public static final class style {
         public static final int AppActionBarStyle=0x7f070001;

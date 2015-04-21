@@ -33,5 +33,6 @@
     <string name="start">Start</string>
     <string name="warting">Warting</string>
     <string name="complete">Completed</string>
+    <string name="failure">Failure</string>
 
 </resources>

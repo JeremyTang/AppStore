@@ -15,18 +15,24 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.jingliang.appstore.R;
+import com.jingliang.appstore.bean.DownloadInfo;
 import com.jingliang.appstore.download.DownloadManager;
 import com.jingliang.appstore.download.DownloadManager.ManagerCallBack;
 import com.jingliang.appstore.download.DownloadService;
-import com.jingliang.appstore.entity.DownloadInfo;
+import com.jingliang.appstore.utils.Utils;
 import com.lidroid.xutils.exception.DbException;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.HttpHandler;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
-import com.lidroid.xutils.util.LogUtils;
 
+/**
+ *
+ * @author tjl 　下载列表刷新适配器
+ */
 public class DownloadAdapter extends BaseAdapter {
+
+	private static final String tag = "Download";
 
 	private Context mContext;
 	private DownloadManager mDownloadManager;
@@ -51,7 +57,6 @@ public class DownloadAdapter extends BaseAdapter {
 
 	@Override
 	public long getItemId(int position) {
-		// TODO Auto-generated method stub
 		return mDownloadManager.getDownloadInfo(position).getId();
 	}
 
@@ -70,8 +75,67 @@ public class DownloadAdapter extends BaseAdapter {
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-		holder.setData(mDownloadInfo);
+		holder.bindSource(mDownloadInfo);
 		return convertView;
+	}
+
+	class ViewHolder {
+		ImageView image;
+		TextView name;
+		TextView message;
+		ProgressBar progress;
+		Button button;
+
+		public void bindSource(DownloadInfo downloadinfo) {
+			if (downloadinfo == null) {
+				return;
+			}
+			final DownloadInfo mDownloadInfo = downloadinfo;
+			name.setText(mDownloadInfo.getFileName());
+			final HttpHandler.State mState = mDownloadInfo.getState();
+			final HttpHandler<File> mHandler = mDownloadInfo.getHandler();
+			Log.d(tag, "mState = " + mState);
+			switch (mState) {
+			case WAITING:
+				button.setText(mContext.getString(R.string.warting));
+				break;
+			case STARTED:
+				button.setText(mContext.getString(R.string.pause));
+				break;
+			case LOADING:
+				button.setText(mContext.getString(R.string.pause));
+				break;
+			case FAILURE:
+				button.setText(mContext.getString(R.string.retry));
+				break;
+			default:
+				break;
+			}
+			button.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					try {
+						mDownloadManager.removeDownload(mDownloadInfo);
+					} catch (DbException e) {
+						e.printStackTrace();
+					}
+					DownloadAdapter.this.notifyDataSetChanged();
+				}
+			});
+			if (mHandler != null) {
+				DownloadManager.ManagerCallBack callback = (ManagerCallBack) mHandler
+						.getRequestCallBack();
+				callback.setBaseCallBack(new DownloadCallback(ViewHolder.this));
+			}
+
+		}
+
+		public void bindView(View view) {
+			image = (ImageView) view.findViewById(R.id.download_icon);
+			name = (TextView) view.findViewById(R.id.download_name);
+			progress = (ProgressBar) view.findViewById(R.id.download_progress);
+			button = (Button) view.findViewById(R.id.download_button);
+			message = (TextView) view.findViewById(R.id.download_message);
+		}
 	}
 
 	class DownloadCallback extends RequestCallBack<File> {
@@ -87,109 +151,24 @@ public class DownloadAdapter extends BaseAdapter {
 		public void onLoading(long total, long current, boolean isUploading) {
 			mHolder.progress.setMax((int) total / 1000);
 			mHolder.progress.setProgress((int) current / 1000);
-			mHolder.button.setText(mContext.getString(R.string.pause));
+			mHolder.message.setText(Utils
+					.convertDownloadMessage(total, current));
 			super.onLoading(total, current, isUploading);
 		}
 
 		@Override
 		public void onSuccess(ResponseInfo<File> arg0) {
-			mHolder.button.setText(mContext.getString(R.string.complete));
 			mHolder.progress.setMax(100);
 			mHolder.progress.setProgress(100);
+			mHolder.message.setText(mContext.getString(R.string.complete));
 		}
 
 		@Override
 		public void onFailure(HttpException arg0, String arg1) {
-			// TODO Auto-generated method stub
 			mHolder.button.setText(mContext.getString(R.string.retry));
+			mHolder.message.setText(mContext.getString(R.string.failure));
 		}
 
-	}
-
-	class ViewHolder {
-
-		boolean isBindView = false;
-		ImageView image;
-		TextView name;
-		ProgressBar progress;
-		Button button;
-
-		public void setData(DownloadInfo downloadinfo) {
-			// if (!isBindView) {
-			// return;
-			// }
-			if (downloadinfo == null) {
-				return;
-			}
-			final DownloadInfo mDownloadInfo = downloadinfo;
-			name.setText(mDownloadInfo.getFileName());
-			HttpHandler<File> httpHanlder = mDownloadInfo.getHandler();
-			final HttpHandler.State state;
-			if (httpHanlder != null) {
-				state = mDownloadInfo.getState();
-				Log.d("jingliang", "state = " + state);
-				switch (mDownloadInfo.getState()) {
-				case WAITING:
-					button.setText(mContext.getString(R.string.warting));
-					break;
-				case STARTED:
-					button.setText(mContext.getString(R.string.pause));
-					break;
-				case LOADING:
-					button.setText(mContext.getString(R.string.pause));
-					break;
-				case FAILURE:
-					button.setText(mContext.getString(R.string.retry));
-					break;
-				default:
-					break;
-				}
-				DownloadManager.ManagerCallBack callback = (ManagerCallBack) httpHanlder
-						.getRequestCallBack();
-				callback.setBaseCallBack(new DownloadCallback(this));
-				button.setOnClickListener(new OnClickListener() {
-					public void onClick(View v) {
-						Log.d("jingliang", "onClcik " + state);
-						switch (state) {
-						case WAITING:
-						case STARTED:
-						case LOADING:
-							try {
-								mDownloadManager.stopDownload(mDownloadInfo);
-								button.setText(mContext
-										.getString(R.string.resume));
-							} catch (DbException e) {
-								LogUtils.e(e.getMessage(), e);
-							}
-							break;
-						case CANCELLED:
-						case FAILURE:
-							try {
-								mDownloadManager.resumeDownload(mDownloadInfo,
-										new DownloadCallback(ViewHolder.this));
-								button.setText(mContext
-										.getString(R.string.pause));
-							} catch (DbException e) {
-								LogUtils.e(e.getMessage(), e);
-							}
-
-							break;
-						default:
-							break;
-						}
-						DownloadAdapter.this.notifyDataSetChanged();
-					}
-				});
-			}
-		}
-
-		public void bindView(View view) {
-			// isBindView = true;
-			image = (ImageView) view.findViewById(R.id.download_icon);
-			name = (TextView) view.findViewById(R.id.download_name);
-			progress = (ProgressBar) view.findViewById(R.id.download_progress);
-			button = (Button) view.findViewById(R.id.download_button);
-		}
 	}
 
 }

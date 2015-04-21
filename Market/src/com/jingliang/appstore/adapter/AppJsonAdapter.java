@@ -105,7 +105,48 @@ public class AppJsonAdapter extends BaseAdapter {
 						MarketManager.DOWNLOAD_DIR + obj.getString("name")
 								+ ".apk",// 文件保存地址
 						true, true, null);
-
+				// 使用asynchttpclient框架进行下载
+				// HttpController.get(obj.getString("path").trim(),
+				// new AsyncHttpResponseHandler() {
+				//
+				// @Override
+				// public void onSuccess(int arg0, Header[] arg1,
+				// byte[] arg2) {
+				// Log.d("file", "onSuccess -- " + arg2.length);
+				// try {
+				// File file = new File(Environment
+				// .getExternalStorageDirectory()
+				// + File.separator
+				// + obj.getString("name") + ".apk");
+				// if (file.exists()) {
+				// file.delete();
+				// }
+				// FileOutputStream fos = new FileOutputStream(
+				// file);
+				// fos.write(arg2);
+				// fos.flush();
+				// fos.close();
+				// } catch (Exception e) {
+				// e.printStackTrace();
+				// }
+				// }
+				//
+				// @Override
+				// public void onFailure(int arg0, Header[] arg1,
+				// byte[] arg2, Throwable arg3) {
+				// // TODO Auto-generated method stub
+				// Log.d("file", "Fuck !!!");
+				// }
+				//
+				// @Override
+				// public void onProgress(int bytesWritten,
+				// int totalSize) {
+				// Log.d("file", "onProgress -- " + bytesWritten
+				// + "  ----  " + totalSize);
+				// super.onProgress(bytesWritten, totalSize);
+				// }
+				// });
+				//
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

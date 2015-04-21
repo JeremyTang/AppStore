@@ -11,12 +11,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jingliang.appstore.R;
-import com.jingliang.appstore.entity.NavInfo;
+import com.jingliang.appstore.bean.Navigation;
 
 public class NavAdapter extends BaseAdapter {
 
 	private Context mContext;
-	private List<NavInfo> mNavs;
+	private List<Navigation> mNavs;
 	private static final int PADDING = 20;
 
 	private int index = -1;
@@ -26,7 +26,7 @@ public class NavAdapter extends BaseAdapter {
 		TextView title;
 	}
 
-	public NavAdapter(Context mContext, List<NavInfo> mNavs) {
+	public NavAdapter(Context mContext, List<Navigation> mNavs) {
 		super();
 		this.mContext = mContext;
 		this.mNavs = mNavs;
@@ -59,7 +59,7 @@ public class NavAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		ViewHolder holder = null;
-		final NavInfo nav = mNavs.get(position);
+		final Navigation nav = mNavs.get(position);
 		if (convertView == null) {
 			holder = new ViewHolder();
 			convertView = LayoutInflater.from(mContext).inflate(

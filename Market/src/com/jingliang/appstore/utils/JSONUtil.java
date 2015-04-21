@@ -3,7 +3,7 @@ package com.jingliang.appstore.utils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.jingliang.appstore.entity.AppInfo;
+import com.jingliang.appstore.bean.AppInfo;
 
 public class JSONUtil {
 
