@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/common_actionsheet_bg"
+    android:orientation="vertical"
+    android:padding="20.0dip" >
+
+    <Button
+        android:id="@+id/btn_open_in_browser"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/common_btn_green_actionsheet"
+        android:text="在浏览器中打开" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20.0dip"
+        android:background="@drawable/common_btn_black_actionsheet"
+        android:text="@string/cancel" />
+
+</LinearLayout>

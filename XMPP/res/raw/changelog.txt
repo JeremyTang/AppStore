@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <style type="text/css">
+      div.title {
+        color: #54ACEA;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 0.5em;
+        margin-bottom: 0.25em;
+        text-align:center }
+      div.subtitle {
+        color: #54ACEA;
+        font-size: 0.8em;
+        text-align:center }
+      div.freetext {
+        color: #000000 }
+      div.list {
+        color: #000000 }
+      a {
+        color: #000000 }
+      span.elite {
+        color: #54ACEA }
+    </style>
+  </head>
+
+  <body>
+$ 1.1.0
+  % V1.1.0
+  _ 2014-08-08
+    * 增加QQ动态表情
+    * 修改switch主题
+    
+$ 1.0.1
+  % V1.0.1
+  _ 2013-12-22
+    * 增加向好友发出重新申请添加的功能，解决未能成功添加好友的问题
+    * 修复掉线时，好友列表中显示有在线好友的bug
+    * 增加更新日志功能
+    * 修改应用主题支持4.0风格
+    * 将UI控件的包名统一修改为com.way.ui.xx
+    
+$ 1.0.0
+  % V1.0.0
+  _ 2013-12-01
+    * 简洁XMPP第一个正式版本上线
+    * 支持Android 2.2以上机器正常运行
+    
+$ END_OF_CHANGE_LOG
+  </body>
+</html>

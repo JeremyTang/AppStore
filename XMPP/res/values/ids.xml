@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="inputArea" type="id">false</item>
+    <item name="selected_view" type="id"/>
+    <item name="scrollview" type="id"/>
+    <item name="arrow_down" type="id"/>
+    <item name="scroller" type="id"/>
+
+</resources>

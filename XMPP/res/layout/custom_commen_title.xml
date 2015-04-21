@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlCommenTitle"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/title_bar_height"
+    android:background="@drawable/skin_header_bar_bg"
+    android:gravity="center_vertical"
+    android:padding="0.0px" >
+
+    <TextView
+        android:id="@+id/ivTitleName"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="4.0dip"
+        android:layout_marginRight="96.0dip"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@null"
+        android:textColor="@color/skin_bar_text"
+        android:textSize="19.0sp" />
+
+    <ImageView
+        android:id="@+id/ivTitleStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="2.0dip"
+        android:layout_toLeftOf="@id/ivTitleName"
+        android:src="@drawable/status_online"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/ivTitleProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/ivTitleName"
+        android:indeterminateDrawable="@drawable/common_loading4"
+        android:maxHeight="16dip"
+        android:maxWidth="16dip"
+        android:minHeight="16dip"
+        android:minWidth="16dip"
+        android:visibility="gone" />
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        layout="@layout/custom_commen_title_rightview" />
+
+    <ImageButton
+        android:id="@+id/show_left_fragment_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dip"
+        android:background="@drawable/showleft_selector"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/show_right_fragment_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dip"
+        android:background="@drawable/showright_selector"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:visibility="gone" />
+
+</RelativeLayout>

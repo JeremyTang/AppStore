@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:id="@+id/scrollAreaLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/shape_line"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/face"
+            android:layout_width="68.0dip"
+            android:layout_height="68.0dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="83.0dip"
+            android:background="@drawable/card_avatar"
+            android:scaleType="fitXY"
+            android:src="@drawable/login_default_avatar" />
+
+        <RelativeLayout
+            android:id="@+id/loginInputView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:id="@+id/input"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32.0dip"
+                android:layout_marginRight="32.0dip"
+                android:layout_marginTop="25.0dip"
+                android:background="@drawable/as_input_frame"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <EditText
+                        android:id="@+id/account_input"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="jid@example.com"
+                        android:imeActionLabel="@string/next"
+                        android:maxLength="50"
+                        android:paddingBottom="6.0dip"
+                        android:paddingLeft="50.0dip"
+                        android:paddingTop="6.0dip"
+                        android:singleLine="true"
+                        android:textColor="#ff333333"
+                        android:textSize="17.829987dip" />
+                    android:imeOptions="actionNext|flagNoExtractUi"
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/account_input"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="10.0dip"
+                        android:text="@string/account"
+                        android:textColor="#ff333333"
+                        android:textSize="16.5dip" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:background="#ffcfd4da" />
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <EditText
+                        android:id="@+id/password"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="@string/password_input_prompt"
+                        android:imeActionLabel="@string/login"
+                        android:inputType="textPassword"
+                        android:maxLength="16"
+                        android:maxLines="1"
+                        android:paddingBottom="6.0dip"
+                        android:paddingLeft="50.0dip"
+                        android:paddingTop="6.0dip"
+                        android:textColor="#ff333333"
+                        android:textSize="17.829987dip" />
+                    android:imeOptions="actionDone|flagNoExtractUi"
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/password"
+                        android:paddingLeft="10.0dip"
+                        android:text="@string/password"
+                        android:textColor="#ff333333"
+                        android:textSize="16.5dip" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/loginlayout"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:layout_alignLeft="@id/input"
+                android:layout_alignRight="@id/input"
+                android:layout_below="@id/input"
+                android:layout_marginTop="5.0dip"
+                android:padding="1.0dip" >
+
+                <Button
+                    android:id="@+id/login"
+                    style="@style/login_Font"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/chat_send_button_bg"
+                    android:gravity="center"
+                    android:onClick="onLoginClick"
+                    android:text="@string/login"
+                    android:textColor="#ffffffff"
+                    android:textSize="17.0sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32.0dip"
+            android:layout_marginRight="32.0dip"
+            android:layout_marginTop="15.0dip"
+            android:orientation="horizontal" >
+
+            <CheckBox
+                android:id="@+id/auto_save_password"
+                android:layout_width="wrap_content"
+                android:layout_height="40.0dip"
+                android:button="@drawable/checkbox_bg1"
+                android:checked="true"
+                android:text="@string/auto_save_password"
+                android:textColor="@color/black" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.0px"
+                android:layout_weight="1.0" />
+
+            <CheckBox
+                android:id="@+id/hide_login"
+                android:layout_width="wrap_content"
+                android:layout_height="40.0dip"
+                android:button="@drawable/checkbox_bg1"
+                android:checked="false"
+                android:text="@string/hide_login"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15.0dip"
+            android:layout_marginLeft="32.0dip"
+            android:layout_marginRight="32.0dip"
+            android:orientation="horizontal" >
+
+            <CheckBox
+                android:id="@+id/use_tls"
+                android:layout_width="wrap_content"
+                android:layout_height="40.0dip"
+                android:button="@drawable/checkbox_bg1"
+                android:text="@string/info_accounts"
+                android:textColor="@color/black" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.0px"
+                android:layout_weight="1.0" />
+
+            <CheckBox
+                android:id="@+id/silence_login"
+                android:layout_width="wrap_content"
+                android:layout_height="40.0dip"
+                android:button="@drawable/checkbox_bg1"
+                android:checked="false"
+                android:text="@string/silence_login"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/login_help_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        layout="@layout/login_help" />
+
+</FrameLayout>

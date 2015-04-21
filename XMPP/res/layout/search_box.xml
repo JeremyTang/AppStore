@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/skin_searchbar_bg" >
+
+    <Button
+        android:id="@+id/btn_cancel_search"
+        android:layout_width="49.0dip"
+        android:layout_height="35.0dip"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="0.0dip"
+        android:layout_marginRight="10.0dip"
+        android:background="@drawable/search_box_cancel_btn_bg"
+        android:text="@string/cancel"
+        android:textColor="@color/skin_search_button"
+        android:textSize="15.0sp" />
+
+    <EditText
+        android:id="@+id/et_search_keyword"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="10.0dip"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginRight="10.0dip"
+        android:layout_marginTop="10.0dip"
+        android:layout_toLeftOf="@id/btn_cancel_search"
+        android:background="@drawable/skin_searchbar_input"
+        android:drawableLeft="@drawable/skin_searchbar_icon"
+        android:drawablePadding="8.0dip"
+        android:ellipsize="none"
+        android:hint="@string/searchdialog_find_contact_new"
+        android:paddingBottom="8.0dip"
+        android:paddingLeft="10.0dip"
+        android:paddingRight="30.0dip"
+        android:paddingTop="8.0dip"
+        android:singleLine="true"
+        android:textColor="@color/skin_input"
+        android:textColorHint="@color/skin_hint_input"
+        android:textSize="15.0sp" />
+
+    <ImageButton
+        android:id="@+id/ib_clear_text"
+        android:layout_width="20.0dip"
+        android:layout_height="20.0dip"
+        android:layout_alignRight="@id/et_search_keyword"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="8.0dip"
+        android:background="@null"
+        android:padding="0.0dip"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cross"
+        android:visibility="invisible" />
+
+</RelativeLayout>

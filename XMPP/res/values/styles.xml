@@ -1,0 +1,315 @@
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="Default" parent="@android:style/Theme.Holo.Light" tools:targetApi="11">
+        <item name="android:textColorPrimaryInverse">@android:color/black</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleSize">@dimen/title_bar_height</item>
+        <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
+        <item name="android:autoCompleteTextViewStyle">@style/customAutoCompleteTextView</item>
+        <item name="android:checkboxStyle">@style/customCheckBox</item>
+        <item name="android:editTextStyle">@style/customEditText</item>
+        <item name="android:listViewStyle">@style/customListView</item>
+        <item name="android:radioButtonStyle">@style/customRadioButton</item>
+        <item name="android:windowAnimationStyle">@style/actAnimation</item>
+        <item name="switchStyle">@style/switch_optimus_iphone</item>
+    </style>
+
+    <style name="Default.NoTitleBar" parent="@style/Default">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar" tools:targetApi="11">false</item>
+    </style>
+
+    <style name="Default.SwipeBack" parent="@style/Default">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="Default.SwipeBack.NoTitleBar" parent="@style/Default.SwipeBack">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar" tools:targetApi="11">false</item>
+    </style>
+
+    <style name="Default.AnimPullUp" parent="@style/Default">
+        <item name="android:windowAnimationStyle">@style/pullUpAnimation</item>
+    </style>
+
+    <!-- 滑动返回主题 -->
+    <style name="SwipeBackLayout">
+        <item name="edge_size">50dip</item>
+        <item name="shadow_left">@drawable/shadow_left</item>
+        <item name="shadow_right">@drawable/shadow_right</item>
+        <item name="shadow_bottom">@drawable/shadow_bottom</item>
+    </style>
+
+    <style name="CustomWindowTitleBackground">
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="customAutoCompleteTextView" parent="@android:style/Widget.AutoCompleteTextView">
+        <item name="android:background">@drawable/edit_text</item>
+    </style>
+
+    <style name="customCheckBox" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_bg1</item>
+    </style>
+
+    <style name="customEditText" parent="@android:style/Widget.EditText">
+        <!--
+        <item name="android:background">@drawable/edit_text</item>
+        <item name="android:minHeight">30.0dip</item>
+        -->
+    </style>
+
+    <style name="customListView" parent="@android:style/Widget.ListView">
+        <item name="android:scrollingCache">false</item>
+        <item name="android:cacheColorHint">@null</item>
+    </style>
+
+    <style name="customExpandableListView" parent="@android:style/Widget.ExpandableListView">
+        <item name="android:scrollbarSize">10.0dip</item>
+        <item name="android:scrollbarThumbVertical">@drawable/scrollbar_handle_vertical</item>
+        <item name="android:persistentDrawingCache">all</item>
+        <item name="android:alwaysDrawnWithCache">true</item>
+        <item name="android:listSelector">@drawable/list_selector_background</item>
+        <item name="android:scrollingCache">true</item>
+        <item name="android:cacheColorHint">@color/window_bg</item>
+        <item name="android:childDivider">@drawable/line</item>
+        <item name="android:divider">@null</item>
+        <item name="android:dividerHeight">1.0px</item>
+    </style>
+
+    <style name="customRadioButton" parent="@android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/checkbox_bg1</item>
+    </style>
+
+    <style name="pullUpAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_2_enter_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_2_enter_out</item>
+        <item name="android:taskOpenEnterAnimation">@anim/activity_2_enter_in</item>
+        <item name="android:taskOpenExitAnimation">@anim/activity_2_enter_out</item>
+    </style>
+
+    <style name="actAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_new</item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/activity_back</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_finish</item>
+        <item name="android:taskOpenEnterAnimation">@anim/activity_new</item>
+        <item name="android:taskOpenExitAnimation">@anim/activity_out</item>
+        <item name="android:taskCloseEnterAnimation">@anim/activity_back</item>
+        <item name="android:taskCloseExitAnimation">@anim/activity_finish</item>
+    </style>
+
+    <style name="PopupAnimation" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/sc_popup_enter</item>
+        <item name="android:windowExitAnimation">@anim/sc_popup_exit</item>
+    </style>
+
+    <style name="switch_optimus" parent="android:Widget.CompoundButton">
+        <item name="thumb">@drawable/switch_inner</item>
+        <item name="track">@drawable/skin_switch_track</item>
+        <item name="textOn">@string/textOn</item>
+        <item name="textOff">@string/textOff</item>
+        <item name="thumbTextPadding">12.0dip</item>
+        <item name="switchTextAppearance">@style/TextAppearanceSwitch</item>
+        <item name="switchMinWidth">75.0dip</item>
+        <item name="switchPadding">16.0dip</item>
+    </style>
+
+    <style name="switch_optimus_iphone" parent="android:Widget.CompoundButton">
+        <item name="thumb">@drawable/switch_inner7</item>
+        <item name="track">@drawable/switch_track7</item>
+        <item name="textOn">@string/textOn7</item>
+        <item name="textOff">@string/textOff7</item>
+        <item name="switchTextAppearance">@style/TextAppearanceSwitch</item>
+        <item name="thumbTextPadding">9.0dip</item>
+        <item name="switchMinWidth">30.0dip</item>
+        <item name="switchPadding">2.0dip</item>
+    </style>
+
+    <style name="TextAppearanceSwitch" parent="@android:style/TextAppearance.Small">
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColorHighlight">?android:textColorHighlight</item>
+        <item name="android:textColorHint">?android:textColorHint</item>
+        <item name="android:textColorLink">?android:textColorLink</item>
+    </style>
+
+    <style name="ButtonGreen" parent="@android:style/Widget.Button">
+        <item name="android:textSize">@dimen/textSizeS2</item>
+        <item name="android:textColor">@color/skin_color_button</item>
+        <item name="android:background">@drawable/common_btn_green</item>
+    </style>
+
+    <style name="ButtonWhite" parent="@android:style/Widget.Button">
+        <item name="android:textSize">@dimen/textSizeS2</item>
+        <item name="android:textColor">@color/skin_button</item>
+        <item name="android:background">@drawable/common_btn_white</item>
+    </style>
+
+    <style name="ButtonRed" parent="@style/ButtonGreen">
+        <item name="android:background">@drawable/common_btn_red</item>
+    </style>
+
+    <style name="list_group_item">
+        <item name="android:background">@drawable/common_list_group_item_background</item>
+    </style>
+
+    <style name="list_item">
+        <item name="android:background">@drawable/common_list_item_background</item>
+    </style>
+
+    <style name="setting_item_single">
+        <item name="android:background">@drawable/common_strip_setting_bg</item>
+    </style>
+
+    <style name="setting_item_top">
+        <item name="android:background">@drawable/common_strip_setting_top</item>
+    </style>
+
+    <style name="setting_item_middle">
+        <item name="android:background">@drawable/common_strip_setting_middle</item>
+    </style>
+
+    <style name="setting_item_bottom">
+        <item name="android:background">@drawable/common_strip_setting_bottom</item>
+    </style>
+
+    <style name="IconArrowRight" parent="@android:style/Widget.TextView">
+        <item name="android:background">@drawable/common_arrow_right_selector</item>
+        <item name="android:height">15.0dip</item>
+        <item name="android:width">9.0dip</item>
+    </style>
+
+    <style name="TipsPopupWindowAnimation" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/tips_slip_in_top</item>
+        <item name="android:windowExitAnimation">@anim/tips_slip_out_top</item>
+    </style>
+
+    <style name="TextViewTip" parent="@android:style/Widget.TextView">
+        <item name="android:background">@drawable/msg_tip_bg</item>
+        <item name="android:paddingLeft">4.0dip</item>
+        <item name="android:paddingTop">2.0dip</item>
+        <item name="android:paddingRight">4.0dip</item>
+        <item name="android:paddingBottom">2.0dip</item>
+    </style>
+
+    <style name="TextViewTime" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/textSizeS4</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/aio_time_bg</item>
+        <item name="android:paddingLeft">14.0dip</item>
+        <item name="android:paddingRight">14.0dip</item>
+    </style>
+
+    <style name="TextViewRefresh" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/textSizeS4</item>
+        <item name="android:textColor">@color/skin_bar_text</item>
+        <item name="android:drawableLeft">@drawable/aio_refresh_over</item>
+        <item name="android:drawablePadding">6.0dip</item>
+    </style>
+
+    <style name="qZonePublishProgressStyle">
+        <item name="android:maxWidth">30.0dip</item>
+        <item name="android:maxHeight">30.0dip</item>
+        <item name="android:minWidth">30.0dip</item>
+        <item name="android:minHeight">30.0dip</item>
+    </style>
+
+    <style name="DialogStyle" parent="@android:style/Theme.Dialog">
+
+        <!-- 设置完全透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 设置无边框 -->
+        <!-- <item name="android:windowFrame">@null</item> -->
+        <!-- 设置无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设置为浮动窗口 -->
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 设置动画 -->
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <!-- 设置屏幕变暗 -->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="MenuDialogAnimation" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit</item>
+    </style>
+
+    <style name="MenuDialogStyle">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="common_menu_dialog_layout_style">
+        <item name="android:background">#88000000</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+    <style name="common_menu_dialog_title_style">
+        <item name="android:paddingLeft">@dimen/common_menu_dialog_tilte_paddingLR</item>
+        <item name="android:paddingRight">@dimen/common_menu_dialog_tilte_paddingLR</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_marginTop">@dimen/common_menu_dialog_tile_marginTop</item>
+        <item name="android:layout_marginBottom">@dimen/common_menu_dialog_tile_marginBottom</item>
+    </style>
+
+    <style name="common_menu_dialog_content_style">
+        <item name="android:paddingLeft">@dimen/common_menu_dialog_layout_paddingLR</item>
+        <item name="android:paddingRight">@dimen/common_menu_dialog_layout_paddingLR</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0.0dip</item>
+    </style>
+
+    <style name="common_menu_dialog_btn_style">
+        <item name="android:textSize">@dimen/textSizeS2</item>
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">48.0dip</item>
+        <item name="android:layout_marginTop">@dimen/common_menu_dialog_layout_btn_marginTop</item>
+        <item name="android:layout_marginBottom">@dimen/common_menu_dialog_layout_btn_marginBottom</item>
+    </style>
+
+    <style name="common_menu_dialog_txt_style">
+        <item name="android:textSize">@dimen/textSizeS2</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/common_menu_dialog_layout_btn_marginTop</item>
+    </style>
+
+    <style name="common_menu_dialog_cancel_btn_style" parent="@style/common_menu_dialog_btn_style">
+        <item name="android:textSize">@dimen/textSizeS2</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:background">@drawable/common_btn_black_actionsheet</item>
+        <item name="android:layout_marginTop">@dimen/common_menu_dialog_layout_cancel_marginTop</item>
+        <item name="android:layout_marginBottom">@dimen/common_menu_dialog_layout_cancel_marginBottom</item>
+        <item name="android:text">@string/cancel</item>
+    </style>
+
+    <style name="common_menu_dialog_white_btn_style" parent="@style/common_menu_dialog_btn_style">
+        <item name="android:background">@drawable/common_btn_gray_actionsheet</item>
+    </style>
+
+    <style name="common_menu_dialog_gray_btn_style" parent="@style/common_menu_dialog_btn_style">
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:background">@drawable/common_btn_black_actionsheet</item>
+    </style>
+
+    <style name="common_menu_dialog_red_btn_style" parent="@style/common_menu_dialog_btn_style">
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:background">@drawable/common_btn_red_actionsheet</item>
+    </style>
+
+</resources>

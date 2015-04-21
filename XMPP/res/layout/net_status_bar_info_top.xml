@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/net_status_bar_top"
+    android:layout_width="fill_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:id="@+id/net_status_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="40.0dip"
+        android:background="@drawable/net_warning_bar_bg"
+        android:gravity="center_vertical"
+        android:paddingLeft="10.0dip" >
+
+        <TextView
+            android:id="@+id/net_status_bar_info_top"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5.0dip"
+            android:layout_weight="1.0"
+            android:drawableLeft="@drawable/net_warning"
+            android:drawablePadding="10.0dip"
+            android:gravity="center_vertical"
+            android:text="@string/net_error_tip"
+            android:textColor="#ff2a271e"
+            android:textSize="13.0sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4.0dip"
+            android:src="@drawable/net_warning_redirect" />
+    </LinearLayout>
+
+</LinearLayout>

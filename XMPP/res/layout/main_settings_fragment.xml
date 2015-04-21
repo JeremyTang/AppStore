@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/custom_commen_title" />
+
+    <com.way.ui.scrollview.BounceScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/coversation_bg"
+        android:fillViewport="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/shape_bg"
+            android:orientation="vertical"
+            android:paddingLeft="10.0dip"
+            android:paddingRight="10.0dip"
+            android:paddingTop="10.0dip" >
+
+            <RelativeLayout
+                android:id="@+id/accountSetting"
+                android:layout_width="fill_parent"
+                android:layout_height="63.0dip"
+                android:background="@drawable/common_strip_setting_top"
+                android:clickable="true"
+                android:focusable="true" >
+
+                <FrameLayout
+                    android:id="@+id/frameLayout1"
+                    android:layout_width="54.0dip"
+                    android:layout_height="54.0dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10.0dip" >
+
+                    <ImageView
+                        android:id="@+id/face"
+                        android:layout_width="50.0dip"
+                        android:layout_height="50.0dip"
+                        android:layout_gravity="center"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_launcher" />
+
+                    <ImageView
+                        android:id="@+id/statusIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|right|center"
+                        android:contentDescription="@null"
+                        android:src="@drawable/status_online_btn" />
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10.0dip"
+                    android:contentDescription="@null"
+                    android:duplicateParentState="true"
+                    android:src="@drawable/common_arrow_right_selector" />
+
+                <TextView
+                    android:id="@+id/status"
+                    style="@style/C8_Font_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/nick"
+                    android:layout_marginRight="10.0dip"
+                    android:layout_toLeftOf="@id/imageView1"
+                    android:duplicateParentState="true"
+                    android:text="在线" />
+
+                <TextView
+                    android:id="@+id/nick"
+                    style="@style/B4_Font_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="69.0dip"
+                    android:layout_toRightOf="@id/frameLayout1"
+                    android:duplicateParentState="true"
+                    android:ellipsize="end"
+                    android:singleLine="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:background="@drawable/common_strip_setting_middle"
+                android:clickable="false"
+                android:focusable="false" >
+
+                <TextView
+                    style="@style/B4_Font_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12.0dip"
+                    android:duplicateParentState="true"
+                    android:gravity="center_vertical"
+                    android:text="显示离线好友" />
+
+                <com.way.ui.switcher.Switch
+                    android:id="@+id/show_offline_roster_switch"
+                    android:layout_width="80dip"
+                    android:layout_height="28dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8.0dip" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:background="@drawable/common_strip_setting_bottom"
+                android:clickable="false"
+                android:focusable="false" >
+
+                <TextView
+                    style="@style/B4_Font_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12.0dip"
+                    android:duplicateParentState="true"
+                    android:gravity="center_vertical"
+                    android:text="通知栏挂机图标" />
+
+                <com.way.ui.switcher.Switch
+                    android:id="@+id/notify_run_background_switch"
+                    android:layout_width="80dip"
+                    android:layout_height="28dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8.0dip" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:layout_marginTop="15.0dip"
+                android:background="@drawable/common_strip_setting_top"
+                android:clickable="false"
+                android:focusable="false" >
+
+                <TextView
+                    style="@style/B4_Font_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12.0dip"
+                    android:duplicateParentState="true"
+                    android:gravity="center_vertical"
+                    android:text="静音模式" />
+
+                <com.way.ui.switcher.Switch
+                    android:id="@+id/new_msg_sound_switch"
+                    android:layout_width="80dip"
+                    android:layout_height="28dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8.0dip" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:background="@drawable/common_strip_setting_middle"
+                android:clickable="false"
+                android:focusable="false" >
+
+                <TextView
+                    style="@style/B4_Font_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12.0dip"
+                    android:duplicateParentState="true"
+                    android:gravity="center_vertical"
+                    android:text="消息振动提示" />
+
+                <com.way.ui.switcher.Switch
+                    android:id="@+id/new_msg_vibrator_switch"
+                    android:layout_width="80dip"
+                    android:layout_height="28dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8.0dip" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:background="@drawable/common_strip_setting_middle"
+                android:clickable="false"
+                android:focusable="false" >
+
+                <TextView
+                    style="@style/B4_Font_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12.0dip"
+                    android:duplicateParentState="true"
+                    android:gravity="center_vertical"
+                    android:text="消息指示灯提示" />
+
+                <com.way.ui.switcher.Switch
+                    android:id="@+id/new_msg_led_switch"
+                    android:layout_width="80dip"
+                    android:layout_height="28dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8.0dip" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/sound_and_vibrate"
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:background="@drawable/common_strip_setting_bottom"
+                android:clickable="false"
+                android:focusable="false" >
+
+                <TextView
+                    style="@style/B4_Font_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12.0dip"
+                    android:duplicateParentState="true"
+                    android:gravity="center_vertical"
+                    android:text="新消息预览" />
+
+                <com.way.ui.switcher.Switch
+                    android:id="@+id/visiable_new_msg_switch"
+                    android:layout_width="80dip"
+                    android:layout_height="28dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8.0dip" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16.0dip"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/displaySetting"
+                    android:layout_width="fill_parent"
+                    android:layout_height="44.0dip"
+                    android:background="@drawable/common_strip_setting_bg"
+                    android:clickable="false"
+                    android:focusable="false" >
+
+                    <TextView
+                        style="@style/B4_Font_white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="12.0dip"
+                        android:duplicateParentState="true"
+                        android:gravity="center_vertical"
+                        android:text="聊天显示自己头像" />
+
+                    <com.way.ui.switcher.Switch
+                        android:id="@+id/show_head_switch"
+                        android:layout_width="80dip"
+                        android:layout_height="28dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8.0dip" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:layout_marginTop="15.0dip"
+                android:background="@drawable/common_strip_setting_top"
+                android:clickable="false"
+                android:focusable="false" >
+
+                <TextView
+                    style="@style/B4_Font_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12.0dip"
+                    android:duplicateParentState="true"
+                    android:gravity="center_vertical"
+                    android:text="断线自动重连" />
+
+                <com.way.ui.switcher.Switch
+                    android:id="@+id/connection_auto_switch"
+                    android:layout_width="80dip"
+                    android:layout_height="28dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8.0dip" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:background="@drawable/common_strip_setting_middle"
+                android:clickable="false"
+                android:focusable="false" >
+
+                <TextView
+                    style="@style/B4_Font_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12.0dip"
+                    android:duplicateParentState="true"
+                    android:gravity="center_vertical"
+                    android:text="开机自动接收消息" />
+
+                <com.way.ui.switcher.Switch
+                    android:id="@+id/poweron_receiver_msg_switch"
+                    android:layout_width="80dip"
+                    android:layout_height="28dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8.0dip" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:background="@drawable/common_strip_setting_bottom"
+                android:clickable="false"
+                android:focusable="false" >
+
+                <TextView
+                    style="@style/B4_Font_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12.0dip"
+                    android:duplicateParentState="true"
+                    android:gravity="center_vertical"
+                    android:text="发送崩溃报告" />
+
+                <com.way.ui.switcher.Switch
+                    android:id="@+id/send_crash_switch"
+                    android:layout_width="80dip"
+                    android:layout_height="28dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8.0dip" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16.0dip"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/set_feedback"
+                    android:layout_width="fill_parent"
+                    android:layout_height="44.0dip"
+                    android:background="@drawable/common_strip_setting_top"
+                    android:clickable="true"
+                    android:focusable="true" >
+
+                    <TextView
+                        style="@style/B4_Font_white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="12.0dip"
+                        android:duplicateParentState="true"
+                        android:gravity="center_vertical"
+                        android:text="反馈" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="14.0dip"
+                        android:layout_height="14.0dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8.0dip"
+                        android:duplicateParentState="true"
+                        android:src="@drawable/common_arrow_right_selector" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/set_about"
+                    android:layout_width="fill_parent"
+                    android:layout_height="44.0dip"
+                    android:background="@drawable/common_strip_setting_bottom"
+                    android:clickable="true"
+                    android:focusable="true" >
+
+                    <TextView
+                        style="@style/B4_Font_white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="12.0dip"
+                        android:duplicateParentState="true"
+                        android:gravity="center_vertical"
+                        android:text="关于" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="14.0dip"
+                        android:layout_height="14.0dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8.0dip"
+                        android:duplicateParentState="true"
+                        android:src="@drawable/common_arrow_right_selector" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/exit_app"
+                style="@style/ButtonRed"
+                android:layout_width="fill_parent"
+                android:layout_height="46.0dip"
+                android:layout_marginBottom="20.0dip"
+                android:layout_marginTop="15.0dip"
+                android:background="@drawable/common_btn_red"
+                android:text="@string/logout_exit_account" />
+        </LinearLayout>
+    </com.way.ui.scrollview.BounceScrollView>
+
+</LinearLayout>

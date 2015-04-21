@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/shape_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/custom_commen_title" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0" >
+
+        <com.way.ui.xlistview.MsgListView
+            android:id="@+id/msg_listView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="50.0dip"
+            android:divider="@null"
+            android:listSelector="@android:color/transparent"
+            android:transcriptMode="normal" />
+
+        <RelativeLayout
+            android:id="@+id/inputBar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/skin_aio_input_bar_bg" >
+
+            <ImageView
+                android:id="@+id/skin_input_bg"
+                android:layout_width="1.0dip"
+                android:layout_height="1.0dip"
+                android:background="@drawable/chat_input_bar_bg_big"
+                android:scaleType="centerCrop" />
+
+            <ImageButton
+                android:id="@+id/face_switch_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignBottom="@id/inputArea"
+                android:layout_alignTop="@id/inputArea"
+                android:layout_marginRight="2.0dip"
+                android:background="@drawable/trans"
+                android:src="@drawable/qzone_edit_face_drawable" />
+
+            <FrameLayout
+                android:id="@+id/inputArea"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/face_switch_btn"
+                android:paddingTop="1.0dip" >
+
+                <RelativeLayout
+                    android:id="@+id/aio_input_send_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <FrameLayout
+                        android:id="@+id/send_layout"
+                        android:layout_width="59.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8.0dip"
+                        android:addStatesFromChildren="true" >
+
+                        <Button
+                            android:id="@+id/send"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/aio_send_btn"
+                            android:minHeight="34.0dip"
+                            android:text="@string/chat_send"
+                            android:textColor="@color/skin_aio_send_button"
+                            android:textSize="14.0sp" />
+                    </FrameLayout>
+
+                    <com.way.ui.emoji.EmojiEditText
+                        android:id="@+id/input"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dip"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="8.0dip"
+                        android:layout_marginTop="8.0dip"
+                        android:layout_toLeftOf="@id/send_layout"
+                        android:background="@drawable/skin_aio_input_bg"
+                        android:imeActionLabel="@string/aio_ime_action_label"
+                        android:inputType="textMultiLine"
+                        android:maxLines="4"
+                        android:textColor="@color/black"
+                        android:textSize="16.0sp" />
+                </RelativeLayout>
+            </FrameLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/msg_unread_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right|center"
+            android:layout_marginBottom="55.0dip"
+            android:layout_marginRight="25.0dip"
+            android:background="@drawable/aio_unread_bg"
+            android:gravity="center_horizontal"
+            android:paddingTop="3.0dip"
+            android:singleLine="true"
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/textSizeS4"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <com.way.ui.emoji.EmojiKeyboard
+        android:id="@+id/face_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:clickable="true"
+        />
+    <!--
+    <LinearLayout
+        android:id="@+id/face_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff0f0f0"
+        android:orientation="vertical"
+        android:paddingBottom="5dip"
+        android:paddingTop="5dip"
+        android:visibility="gone" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/face_pager"
+            android:layout_width="fill_parent"
+            android:layout_height="120.0dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:background="#0000"
+            android:flipInterval="30"
+            android:persistentDrawingCache="animation" />
+
+        <com.way.ui.view.CirclePageIndicator
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/indicator"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dip" />
+    </LinearLayout>
+    -->
+
+</LinearLayout>

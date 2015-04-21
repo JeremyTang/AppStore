@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="sidebar_item_background_activated_dark">#ff4c365d</color>
+    <color name="common_bg">#ffe6e6e6</color>
+    <color name="text_black">#ff333333</color>
+    <color name="text_white">#ffffffff</color>
+    <color name="text_gray">#ff777777</color>
+    <color name="text_black_disabled">#80333333</color>
+    <color name="text_white_disabled">#80ffffff</color>
+    <color name="text_shadow_color">#66000000</color>
+    <color name="color_hei">#ff000000</color>
+    <color name="color_hei_8">#00000000</color>
+    <color name="color_zhonghui">#ff798089</color>
+    <color name="color_bai">#ffffffff</color>
+    <color name="color_bai_8">#ffffffff</color>
+    <color name="color_lan">#ff067bb1</color>
+    <color name="halftransparent">#aa000000</color>
+    <color name="window_bg">#00eef1f3</color>
+    <color name="title_bg">#ff54acea</color>
+    <color name="transparent">@color/color_hei_8</color>
+    <color name="chat_background">@color/window_bg</color>
+    <color name="chat_time">@color/color_bai</color>
+    <color name="screenshot_normal">#3f000000</color>
+    <color name="screenshot_pressed">#bf000000</color>
+    <color name="qq_normal">@color/color_hei</color>
+    <color name="white">#ffffffff</color>
+    <color name="black">@color/color_hei</color>
+    <color name="video_bg_color">#ffecf3f9</color>
+    <color name="color_divider">#ffdddddd</color>
+    <color name="sqqname">#ffee860a</color>
+    <color name="thirty_transparent_black">#4d000000</color>
+    <color name="twenty_transparent_black">#33000000</color>
+    <color name="contact_category_text">#ff454a52</color>
+    <color name="contact_category_text_focused">#ff4686b3</color>
+    <color name="sc_transparent_black">#7f000000</color>
+    <color name="sc_black">#ff000000</color>
+    <color name="sc_white">@color/color_bai_8</color>
+    <color name="sc_transparent">#00ffffff</color>
+    <color name="sc_gray">#ff777777</color>
+    <color name="sc_name">#ff5fc4ff</color>
+    <color name="sc_transparent_background">@color/color_hei_8</color>
+    <color name="tag_textview1">#ff795028</color>
+    <color name="tag_textview2">#ff4a7928</color>
+    <color name="tag_textview3">#ff284479</color>
+    <color name="link_color">#ff13679d</color>
+    <color name="info_card_qzonepic_default">#ffdedede</color>
+    <color name="action_sheet_point">#ff5f6268</color>
+    <color name="action_sheet_curr_point">#ff9fa1a4</color>
+    <color name="setting_aio_text_size_normal">#ff151617</color>
+    <color name="chat_bubble_btn_text">#ffa86700</color>
+    <color name="custom_theme_color">#66000000</color>
+    <color name="gray">#ff777777</color>
+    <color name="button_reply_normal">#ffffffff</color>
+    <color name="qzone_feeditem_sel">#fff1f1f1</color>
+    <color name="qzone_feeditem_nor">#fffafafa</color>
+
+    <drawable name="trans">@color/color_hei_8</drawable>
+
+    <item name="preview_btn_bg_press" type="drawable">#ff000000</item>
+
+</resources>

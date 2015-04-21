@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.way.ui.view.PullDoorView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e0000000" >
+
+    <TextView
+        style="@style/B7_Font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="20.0dip"
+        android:paddingRight="20.9dip"
+        android:text="@string/login_help_information"
+        android:textColor="#FFFF0000" />
+
+    <TextView
+        android:id="@+id/pulldoor_close_tips"
+        style="@style/B4_Font"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5.0dip"
+        android:gravity="center"
+        android:text="@string/coverview_tip"
+        android:textColor="@color/color_bai" />
+
+</com.way.ui.view.PullDoorView>

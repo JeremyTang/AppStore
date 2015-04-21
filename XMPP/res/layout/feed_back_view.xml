@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_bg"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="46dip"
+        android:background="@drawable/skin_header_bar_bg"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="反馈信息"
+        android:textColor="@color/skin_bar_text"
+        android:textSize="19.0sp" />
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="5.0dip"
+        android:layout_marginRight="5.0dip"
+        android:layout_marginTop="5.0dip"
+        android:layout_weight="1"
+        android:background="@drawable/shape_bg"
+        android:fillViewport="true" >
+
+        <EditText
+            android:id="@+id/fee_back_edit"
+            android:layout_width="match_parent"
+            android:layout_height="200dip"
+            android:background="@null"
+            android:gravity="left|top"
+            android:hint="说些什么吧..."
+            android:inputType="textMultiLine"
+            android:paddingBottom="4.0dip"
+            android:paddingLeft="4.0dip"
+            android:paddingRight="4.0dip"
+            android:paddingTop="4.0dip"
+            android:textSize="16.0sp" />
+    </ScrollView>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:background="@drawable/shape_line" />
+
+    <Button
+        android:id="@+id/feed_back_btn"
+        style="@style/ButtonRed"
+        android:layout_width="wrap_content"
+        android:layout_height="35.0dip"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="5.0dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="5.0dip"
+        android:background="@drawable/common_btn_red"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="15.0dip"
+        android:text="提  交" />
+
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.way.ui.emoji.EmojiLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff0f0f0"
+    android:orientation="vertical"
+    android:paddingBottom="5dip"
+    android:paddingTop="5dip" >
+
+   <android.support.v4.view.ViewPager
+        android:id="@+id/child_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="0.99" />
+
+    <com.way.ui.pagerindicator.CirclePageIndicator
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/indicator"
+        android:layout_width="fill_parent"
+        android:layout_height="8dip" />
+
+</com.way.ui.emoji.EmojiLinearLayout>

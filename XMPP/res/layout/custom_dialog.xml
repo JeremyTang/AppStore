@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialogRoot"
+    android:layout_width="@dimen/dialogBase_width"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/popover_base" >
+
+    <TextView
+        android:id="@+id/dialogTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dialogBase_titleHeight"
+        android:layout_marginLeft="@dimen/dialogBase_titleIconMargin"
+        android:layout_marginRight="@dimen/dialogBase_titleIconMargin"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:textColor="@color/color_bai"
+        android:textSize="@dimen/textSize20sp" />
+
+    <ImageView
+        android:id="@+id/dialogDivider"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:layout_alignBottom="@id/dialogTitle"
+        android:layout_marginLeft="1.0px"
+        android:layout_marginRight="1.0px"
+        android:background="#66c2c8cd" />
+
+    <LinearLayout
+        android:id="@+id/content_view_root"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialogDivider"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/dialogBase_btnArea_magrinTop"
+        android:layout_marginLeft="@dimen/dialogBase_btnArea_magrinLeft"
+        android:layout_marginRight="@dimen/dialogBase_btnArea_magrinRight"
+        android:layout_marginTop="@dimen/dialogBase_btnArea_magrinTop" >
+
+        <TextView
+            android:id="@+id/dialogText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_bai"
+            android:textSize="@dimen/font_size_middle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/content_view_root"
+        android:layout_marginLeft="@dimen/dialogBase_btnArea_magrinLeft"
+        android:layout_marginRight="@dimen/dialogBase_btnArea_magrinRight"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/dialogLeftBtn"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dialogBase_btnHeight"
+            android:layout_weight="1.0"
+            android:background="@drawable/common_dialog_btn_cancel"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@color/color_bai"
+            android:textSize="@dimen/font_size_middle" />
+
+        <View
+            android:layout_width="10.0dip"
+            android:layout_height="0.0dip" />
+
+        <TextView
+            android:id="@+id/dialogRightBtn"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dialogBase_btnHeight"
+            android:layout_weight="1.0"
+            android:background="@drawable/common_dialog_btn_confirm"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@color/color_hei"
+            android:textSize="@dimen/font_size_middle" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/dummy"
+        android:layout_width="fill_parent"
+        android:layout_height="10.0dip"
+        android:layout_below="@id/btnLayout" />
+
+</RelativeLayout>
